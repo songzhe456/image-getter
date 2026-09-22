@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: game_demo
+game:
+  user:
+    can_say: "on"
+  image_url:
+    url: https://cn.bing.com/?FORM=Z9FD1
