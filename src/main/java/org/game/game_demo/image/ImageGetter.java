@@ -19,11 +19,12 @@ public class ImageGetter implements OnlineGetter{
     private String imageUrl;
 
     @Override
-    public void getMessage(String saveDir,String fileName) {
+    public void getMessage(String saveDir,String fileName) throws IOException {
         try {
             FileUtils.copyURLToFile(new URL(getImageUrl()), new File(saveDir, fileName));
         } catch (IOException e) {
             log.error("下载图片{}并将其保存到{}时发生异常{}",fileName,saveDir,e);
+            throw e;
         }
     }
 }

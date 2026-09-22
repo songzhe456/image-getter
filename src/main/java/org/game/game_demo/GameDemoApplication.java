@@ -2,6 +2,7 @@ package org.game.game_demo;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.game.game_demo.image.ImageGetter;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,6 +21,7 @@ public class GameDemoApplication {
         } catch (BeansException be) {
             log.error("用户创建失败！原因：",be);
         }
-
+        ImageController ic = ctx.getBean(ImageController.class);
+        ic.download("download.png");
     }
 }
